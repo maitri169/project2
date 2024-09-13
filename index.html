@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker & Split</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav>
+      <button class="nav-button" onclick="showPage('home')">Home</button>
+      <button class="nav-button" onclick="showPage('addExpense')">Add Expense</button>
+      <button class="nav-button" onclick="showPage('viewExpenses')">View Expenses</button>
+      <button class="nav-button" onclick="showPage('balances')">Balances</button>
+    </nav>
+
+    <!-- Pages -->
+    <div class="page" id="home">
+      <h1>Welcome to Expense Tracker</h1>
+      <p style="margin:100px;">Track your expenses and split between friends easily!</p>
+    </div>
+
+    <div class="page" id="addExpense" style="display:none;">
+      <h2>Add New Expense</h2>
+      <form id="expenseForm" style="margin: 100px;">
+        <input type="number" id="amount" placeholder="Amount (₹)" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="date" id="date" required>
+        <input type="text" id="category" placeholder="Category" required>
+        <input type="text" id="friends" placeholder="Friends (comma-separated)" required>
+        <button type="submit">Add Expense</button>
+      </form>
+    </div>
+
+    <div class="page" id="viewExpenses" style="display:none;">
+      <h2>Transactions</h2>
+      <div id="monthlyTransactions"></div> <!-- Updated ID here -->
+    </div>
+
+    <div class="page" id="balances" style="display:none;">
+      <h2>Balances</h2>
+      <div id="balanceBlocks"></div> <!-- Updated ID here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
